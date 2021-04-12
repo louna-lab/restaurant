@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<xsl:stylesheet  version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:xsl="http://www.w3.org/2001/XML Schema" exclude-result-prefixes="xs">
+	<xsl:output method="html" encoding="utf-8"  />
+
+   <xsl:template match='/'>
+		<html>
+		<head>
+		 <title>
+		 Listz des stagiaires tdi
+		 </title>
+		</head>
+		<body>
+                <table>
+                <tr><th>nom</th><th>prenom</th></tr>
+     <xsl :for-each select="//filiere[code='tdi']>
+    <tr>
+<td><xsl:value-of select="./groupe/@"></td>
+<td><xsl:value-of select="./nom"></td>
+<td><xsl:value-of select=".prenom"></td>
+</tr>
